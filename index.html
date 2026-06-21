@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,32 +7,30 @@
 
 <title>Happy Father's Day ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
 background:linear-gradient(135deg,#0f172a,#1e293b);
-overflow:hidden;
 color:white;
+overflow:hidden;
 }
 
-.screen{
-width:100%;
-height:100vh;
+.page{
 display:none;
+height:100vh;
+width:100%;
+padding:20px;
+text-align:center;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-text-align:center;
-padding:20px;
 }
 
 .active{
@@ -39,98 +38,69 @@ display:flex;
 }
 
 h1{
-font-size:3rem;
-margin-bottom:15px;
+font-size:2rem;
+margin-bottom:20px;
 }
 
 button{
-padding:15px 35px;
+padding:14px 28px;
 border:none;
-border-radius:50px;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
+border-radius:30px;
 background:#ffd700;
-color:#000;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
 margin-top:20px;
-transition:.3s;
 }
 
-button:hover{
-transform:scale(1.05);
-}
-
-.envelope{
-font-size:120px;
-animation:float 2s ease-in-out infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-}
-
-.subtitle{
-font-size:18px;
-opacity:.8;
-margin-top:10px;
-margin-bottom:25px;
-}
-
-/* LETTER PAGE */
-
-.gallery{
-display:flex;
-gap:20px;
-margin:25px 0;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.gallery img{
-width:220px;
-height:220px;
+.photo{
+width:90%;
+max-width:320px;
+height:380px;
 object-fit:cover;
 border-radius:20px;
-border:4px solid white;
-box-shadow:0 0 20px rgba(255,255,255,.3);
+box-shadow:0 0 25px rgba(255,255,255,.2);
+margin-bottom:20px;
 }
 
 .message{
-max-width:850px;
-font-size:20px;
-line-height:1.9;
+font-size:17px;
+line-height:1.7;
+max-width:350px;
 }
 
-/* CAKE */
+.envelope{
+font-size:110px;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-10px);
+}
+}
 
 .cake{
-font-size:180px;
+font-size:160px;
 cursor:pointer;
-transition:.5s;
-user-select:none;
+transition:.3s;
 }
 
 .cake:hover{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 
-.cut{
-transform:scale(.9) rotate(-8deg);
+#final{
+background:linear-gradient(135deg,#526cae,#ad6b5f);
 }
 
-.celebration{
-display:none;
+.celebrate{
 font-size:32px;
-margin-top:20px;
-font-weight:700;
+font-weight:bold;
 animation:pulse 1s infinite alternate;
 }
 
 @keyframes pulse{
-from{
-transform:scale(1);
-}
 to{
 transform:scale(1.08);
 }
@@ -138,9 +108,8 @@ transform:scale(1.08);
 
 .confetti{
 position:absolute;
-width:12px;
-height:12px;
-top:-20px;
+width:10px;
+height:10px;
 animation:fall linear forwards;
 }
 
@@ -150,147 +119,109 @@ transform:translateY(110vh) rotate(720deg);
 }
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-h1{
-font-size:2rem;
-}
-
-.envelope{
-font-size:90px;
-}
-
-.gallery{
-flex-direction:column;
-}
-
-.gallery img{
-width:85%;
-max-width:280px;
-height:auto;
-aspect-ratio:1/1;
-}
-
-.message{
-max-width:850px;
-font-size:20px;
-line-height:1.9;
-animation:fadeIn 2s ease;
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.cake{
-font-size:130px;
-}
-
-button{
-width:85%;
-max-width:320px;
-}
-
-.celebration{
-font-size:24px;
-}
-
-}
-
 </style>
 </head>
 <body>
 
-<!-- AUDIO -->
 <audio id="song" loop>
-    <source src="song.mp3" type="audio/mp3">
+<source src="song.mp3" type="audio/mp3">
 </audio>
 
 <!-- PAGE 1 -->
 
-<div class="screen active" id="page1">
+<div class="page active" id="p1">
 
 <div class="envelope">💌</div>
 
 <h1>A Special Letter For Dad</h1>
 
-<p class="subtitle">Tap below to open your surprise ❤️</p>
-
-<button onclick="openLetter()">Open Letter</button>
+<button onclick="openLetter()">
+Open Letter ❤️
+</button>
 
 </div>
 
 <!-- PAGE 2 -->
 
-<div class="screen" id="page2">
+<div class="page" id="p2">
 
 <h1>Happy Father's Day ❤️</h1>
-<p style="color:#ffd700;font-size:18px;margin-bottom:15px;">
-🎵 A special song is playing for you Dad ❤️
-</p>
 
-<div class="gallery">
-<img src="dad1.jpg" alt="">
-<img src="dad2.jpg" alt="">
-<img src="dad3.jpg" alt="">
-</div>
+<img src="dad1.jpg" class="photo">
 
 <div class="message">
+Dear Dad,
 
-Dear Dad, ❤️
-
-<br><br>
-
-Thank you for every sacrifice, every lesson, and every moment of support you've given me.
-
-You have always stood beside me through every challenge and every success.
-
-Your strength inspires me, your love guides me, and your care means the world to me.
-
-I am truly grateful to have a father like you.
-
-<br><br>
-
-Wishing you a very Happy Father's Day!
-
-<br>
-
-Love You Forever ❤️
-
+Thank you for always supporting me and believing in me.
+You are my greatest strength and inspiration.
 </div>
 
-<button onclick="showCake()">
-Next Surprise 🎁
+<button onclick="next(2,3)">
+Next ➜
 </button>
 
 </div>
 
 <!-- PAGE 3 -->
 
-<div class="screen" id="page3">
+<div class="page" id="p3">
 
-<h1>Cut The Cake Dad 🎂</h1>
+<img src="dad2.jpg" class="photo">
 
-<p class="subtitle">
-Tap the cake to celebrate 🎉
-</p>
+<div class="message">
+Your sacrifices, love and care mean the world to me.
 
-<div class="cake" id="cake" onclick="cutCake()">
+I am grateful every day to have a father like you.
+</div>
+
+<button onclick="next(3,4)">
+Next ➜
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="p4">
+
+<img src="dad3.jpg" class="photo">
+
+<div class="message">
+Thank you for being my hero,
+my guide and my best supporter.
+
+Love you forever Daddy ❤️
+</div>
+
+<button onclick="next(4,5)">
+Surprise 🎁
+</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="p5">
+
+<h1>Tap The Cake 🎂</h1>
+
+<div class="cake" onclick="cutCake()">
 🎂
 </div>
 
-<div class="celebration" id="celebrate">
-🎉 Happy Father's Day Daddyy ❤️ 🎉
 </div>
+
+<!-- PAGE 6 -->
+
+<div class="page" id="final">
+
+<div class="celebrate">
+🎉 HAPPY FATHER'S DAY DADDY ❤️
+</div>
+
+<br>
+
+<h2>Thank You For Everything ❤️</h2>
 
 </div>
 
@@ -298,58 +229,46 @@ Tap the cake to celebrate 🎉
 
 function openLetter(){
 
-    document.getElementById("page1").classList.remove("active");
-    document.getElementById("page2").classList.add("active");
+document.getElementById("p1").classList.remove("active");
+document.getElementById("p2").classList.add("active");
 
-    // Start song immediately when letter opens
-    const song = document.getElementById("song");
-
-    song.play().catch(error => {
-        console.log("Audio playback blocked:", error);
-    });
+document.getElementById("song").play();
 
 }
-function showCake(){
 
-document.getElementById("page2").classList.remove("active");
-document.getElementById("page3").classList.add("active");
+function next(from,to){
+
+document.getElementById("p"+from).classList.remove("active");
+document.getElementById("p"+to).classList.add("active");
 
 }
 
 function cutCake(){
 
-const cake=document.getElementById("cake");
+document.getElementById("p5").classList.remove("active");
+document.getElementById("final").classList.add("active");
 
-cake.innerHTML="🍰";
-cake.classList.add("cut");
-
-document.getElementById("celebrate").style.display="block";
-
-launchConfetti();
+confetti();
 
 }
 
-function launchConfetti(){
+function confetti(){
 
 for(let i=0;i<150;i++){
 
-const confetti=document.createElement("div");
+let c=document.createElement("div");
 
-confetti.classList.add("confetti");
+c.className="confetti";
 
-confetti.style.left=Math.random()*100+"vw";
+c.style.left=Math.random()*100+"vw";
 
-confetti.style.background=
+c.style.background=
 `hsl(${Math.random()*360},100%,50%)`;
 
-confetti.style.animationDuration=
+c.style.animationDuration=
 (Math.random()*3+2)+"s";
 
-document.body.appendChild(confetti);
-
-setTimeout(()=>{
-confetti.remove();
-},6000);
+document.body.appendChild(c);
 
 }
 
@@ -359,3 +278,4 @@ confetti.remove();
 
 </body>
 </html>
+```
